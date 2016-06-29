@@ -36,3 +36,30 @@ for i3 in 1...7{
     }
 }
 sum3
+
+//練習最後一題
+
+func oddOrEvens(nums:[Int])->[(title:String,values:[Int])]{
+    var odds = [Int]()
+    var evens = [Int]()
+    for i in nums{
+        if(nums[i-1]%2 == 1){
+            odds.append(nums[i-1])
+        }else{
+            evens.append(nums[i-1])
+        }
+    }
+    return [("Odd numbers: ",odds),("Even numbers: ",evens)]
+}
+var nummm = [1,2,3,4,5,6,7,8,9,10]
+var times = oddOrEvens(nums: nummm).count
+for i in 0...times-1{
+  print("\(oddOrEvens(nums: nummm)[i].title) \(oddOrEvens(nums: nummm)[i].values)")
+
+}
+
+
+
+
+
+
