@@ -14,11 +14,9 @@ sum1
 
 // 算奇數行的總和
 var sum2 = 0
-for i2 in 1...7 {
+for i2 in 1...7 where i2 % 2 == 1 {
     for v2 in 1...7{
-        if ((i2%2)==1){
            sum2 += i2*v2
-        }
     }
 }
 sum2
@@ -40,10 +38,8 @@ sum3
 //func 最大值 最小值 倍數
 var sum4 = 0
 func minMaxTotal(min:Int,max:Int,range:Int)->Int{
-    for i in min...max{
-        if i % range == 0{
+    for i in min...max where i % range == 0 {
             sum4 += i
-        }
     }
     return sum4
 }
@@ -68,12 +64,10 @@ minMaxTotal2(min: 2, max: 1000, range: 8)
 //func 奇數行總和
 var sum6 = 0
 func oddRowsSum(rows:Int,cols:Int )->Int{
-    for i in 0...rows{
-        if i % 2 == 1{
+    for i in 0...rows where i % 2 == 1 {
             for j in 0...cols {
                 sum6 += (i * j)
             }
-        }
     }
     return sum6
 }
@@ -85,10 +79,8 @@ oddRowsSum(rows: 5 ,cols: 11)
 var sum7 = 0
 func countSum(rows:Int,cols:Int)->Int{
     for i in 0...rows{
-        for j in 0...cols{
-            if i >= j {
+        for j in 0...cols where i >= j {
                 sum7 += (i * j)
-            }
         }
     }
     return sum7
@@ -108,7 +100,7 @@ fahrenheitToCelsius(f: 200)
 func oddOrEvens(nums:[Int])->[(title:String,values:[Int])]{
     var odds = [Int]()
     var evens = [Int]()
-    for i in nums{
+    for i in nums {
         if(i % 2 == 1){
             odds.append(i)
         }else{
